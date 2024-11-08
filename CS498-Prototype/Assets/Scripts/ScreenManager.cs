@@ -8,7 +8,7 @@ public class ScreenManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
     
-    public void GoBack()
+    public void GoToHome()
     {
         SceneManager.LoadScene("UI");
     }
