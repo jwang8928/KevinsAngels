@@ -10,6 +10,8 @@ public class ToDoListManager : MonoBehaviour
     public GameObject ListItemPanel;              // Prefab for each task item (set to your Panel prefab)
     public Slider newTaskAmount;                  // Slider for task amount
     public TextMeshProUGUI newTaskAmountTxt;      // Text display for slider value
+    public TextMeshProUGUI TotalPointsTxt;
+    private int totalPoints = 0;
 
     private void Start()
     {
@@ -53,6 +55,14 @@ public class ToDoListManager : MonoBehaviour
                 removeButton.gameObject.SetActive(true);
                 removeButton.onClick.AddListener(() => RemoveTask(newTask));
             }
+            // Find the complete button in the new task, activate it, and add a click listener
+            Button completeTaskButton = newTask.transform.Find("completeTaskButton").GetComponent<Button>();
+            if (completeTaskButton != null)
+            {
+                completeTaskButton.gameObject.SetActive(true); // Ensure the button is visible
+                completeTaskButton.onClick.AddListener(() => AddTotal(taskAmountText.text));
+                completeTaskButton.onClick.AddListener(() => RemoveTask(newTask));
+            }
 
             // Clear the input field and reset the slider for the next task
             newTaskInput.text = "";
@@ -63,5 +73,13 @@ public class ToDoListManager : MonoBehaviour
     private void RemoveTask(GameObject task)
     {
         Destroy(task); // Remove the task item from the list
+    }
+    private void AddTotal(string taskAmountText) 
+    {
+        if(int.TryParse(taskAmountText, out int amount)) 
+        {
+            totalPoints += amount;
+            TotalPointsTxt.text = totalPoints.ToString();
+        }
     }
 }
