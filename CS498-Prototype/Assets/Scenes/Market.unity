@@ -14521,7 +14521,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 228593270}
   m_Direction: 3
   m_Value: 1.0000004
-  m_Size: 0.8045976
+  m_Size: 0.8045977
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24775,7 +24775,7 @@ GameObject:
   - component: {fileID: 1677553726}
   - component: {fileID: 1677553727}
   m_Layer: 0
-  m_Name: TotalPointsDisplay
+  m_Name: DisplayTotalPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24805,9 +24805,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1677553725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 910c35db19bcc4cad80abb83e498dcf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6325ac4a1baea45dda887fd32fd54980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TotalPointsTxt: {fileID: 1856454280}
 --- !u!1 &1688811910
 GameObject:
   m_ObjectHideFlags: 0

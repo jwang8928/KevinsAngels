@@ -15,6 +15,14 @@ public class ToDoListManager : MonoBehaviour
 
     private void Start()
     {
+        // To Reset the Total Points to 0
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
+
+        //Load the saved total points from PlayerPrefs
+        totalPoints = PlayerPrefs.GetInt("TotalPoints", 0);
+        TotalPointsTxt.text = totalPoints.ToString();
+
         // Add listeners to the submit button and Enter key in the input field
         submitButton.onClick.AddListener(AddTask);
         newTaskInput.onSubmit.AddListener(delegate { AddTask(); });
@@ -80,6 +88,9 @@ public class ToDoListManager : MonoBehaviour
         {
             totalPoints += amount;
             TotalPointsTxt.text = totalPoints.ToString();
+
+            // Save the total points to PlayerPrefs
+            PlayerPrefs.SetInt("TotalPoints", totalPoints);
         }
     }
 }
