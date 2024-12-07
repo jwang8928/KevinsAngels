@@ -5,6 +5,7 @@ public class ScreenManager : MonoBehaviour
 {
    public void GoToDoList()
     {
+        Debug.Log("pressed");
         SceneManager.LoadScene("SampleScene");
     }
     
@@ -15,6 +16,7 @@ public class ScreenManager : MonoBehaviour
 
     public void GoToMarket()
     {
+        Debug.Log("pressed");
         SceneManager.LoadScene("Market");
     }
 }
