@@ -3,7 +3,15 @@ using UnityEngine;
 public class AvatarItems : MonoBehaviour
 {
     public bool boughtBlackSlime = false;
-    public GameObject blackSlime;
+
+    public bool boughtOakTable = false;
+    public bool boughtBirchTable = false;
+    public bool boughtLeafArt = false;
+    public bool boughtCactus = false;
+    public bool boughtArmChair = false;
+    
+    
+    
     public static AvatarItems Instance; // Singleton instance
 
 
@@ -26,6 +34,20 @@ public class AvatarItems : MonoBehaviour
     {
         boughtBlackSlime = true;
     }
+
+    public void BuyOakTable()
+    {
+        boughtOakTable = true;
+    }
+    public void BuyBirchTable()
+    {
+        boughtBirchTable = true;
+    }
+    public void BuyLeafArt()
+    {
+        boughtLeafArt = true;
+    }
+
     // Update is called once per frame
 
 }
